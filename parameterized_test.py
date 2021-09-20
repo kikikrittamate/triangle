@@ -23,5 +23,6 @@ class TriangleTest(unittest.TestCase):
         for a, b, c in self.invalid_argument:
             with self.subTest():
                 msg = f"side lengths ({a},{b},{c})"
-                self.assertRaises(ValueError, is_triangle(a, b, c), msg)
-
+                with self.assertRaises(ValueError):
+                    b1 = is_triangle(a, b, c)
+ 
